@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <RuntimeFrameworkVersion>2.2.4</RuntimeFrameworkVersion>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.2\SESMTTech.Gestor.PlanosDeAcao.WebApi.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netcoreapp2.2\SESMTTech.Gestor.PlanosDeAcao.WebApi.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Furiza.AspNetCore.WebApi.Configuration" Version="1.8.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SESMTTech.Gestor.PlanosDeAcao.Application\SESMTTech.Gestor.PlanosDeAcao.Application.csproj" />
+    <ProjectReference Include="..\SESMTTech.Gestor.PlanosDeAcao.Domain\SESMTTech.Gestor.PlanosDeAcao.Domain.csproj" />
+    <ProjectReference Include="..\SESMTTech.Gestor.PlanosDeAcao.Infrastructure.EntityFrameworkCore\SESMTTech.Gestor.PlanosDeAcao.Infrastructure.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Tests", "0 - Tests", "{82967ECD-C781-4F7F-BB0B-2779D020C3B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Core", "1 - Core", "{AAB27156-F200-4F0F-AC78-274DAF9E343E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Infrastructure", "2 - Infrastructure", "{F1005F17-186F-495A-8E84-FA62B2EFF2B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Service", "3 - Service", "{51314658-1B6C-4648-867A-22D0C5E54940}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SESMTTech.Gestor.PlanosDeAcao.Domain", "SESMTTech.Gestor.PlanosDeAcao.Domain\SESMTTech.Gestor.PlanosDeAcao.Domain.csproj", "{316FEA07-38FF-4640-A70F-05DCEC7C133E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SESMTTech.Gestor.PlanosDeAcao.Application", "SESMTTech.Gestor.PlanosDeAcao.Application\SESMTTech.Gestor.PlanosDeAcao.Application.csproj", "{10A73661-7F70-4EB3-898B-B2200505E894}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SESMTTech.Gestor.PlanosDeAcao.Infrastructure.EntityFrameworkCore", "SESMTTech.Gestor.PlanosDeAcao.Infrastructure.EntityFrameworkCore\SESMTTech.Gestor.PlanosDeAcao.Infrastructure.EntityFrameworkCore.csproj", "{AA2C06E1-6E4F-44D9-B6B0-88CE3DDC53B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SESMTTech.Gestor.PlanosDeAcao.WebApi", "SESMTTech.Gestor.PlanosDeAcao.WebApi\SESMTTech.Gestor.PlanosDeAcao.WebApi.csproj", "{7CC4A89A-9C2F-4D21-8950-6E077D72B2BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{316FEA07-38FF-4640-A70F-05DCEC7C133E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{316FEA07-38FF-4640-A70F-05DCEC7C133E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{316FEA07-38FF-4640-A70F-05DCEC7C133E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{316FEA07-38FF-4640-A70F-05DCEC7C133E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10A73661-7F70-4EB3-898B-B2200505E894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10A73661-7F70-4EB3-898B-B2200505E894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10A73661-7F70-4EB3-898B-B2200505E894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10A73661-7F70-4EB3-898B-B2200505E894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA2C06E1-6E4F-44D9-B6B0-88CE3DDC53B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA2C06E1-6E4F-44D9-B6B0-88CE3DDC53B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA2C06E1-6E4F-44D9-B6B0-88CE3DDC53B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA2C06E1-6E4F-44D9-B6B0-88CE3DDC53B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CC4A89A-9C2F-4D21-8950-6E077D72B2BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CC4A89A-9C2F-4D21-8950-6E077D72B2BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CC4A89A-9C2F-4D21-8950-6E077D72B2BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CC4A89A-9C2F-4D21-8950-6E077D72B2BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{316FEA07-38FF-4640-A70F-05DCEC7C133E} = {AAB27156-F200-4F0F-AC78-274DAF9E343E}
+		{10A73661-7F70-4EB3-898B-B2200505E894} = {AAB27156-F200-4F0F-AC78-274DAF9E343E}
+		{AA2C06E1-6E4F-44D9-B6B0-88CE3DDC53B5} = {F1005F17-186F-495A-8E84-FA62B2EFF2B2}
+		{7CC4A89A-9C2F-4D21-8950-6E077D72B2BA} = {51314658-1B6C-4648-867A-22D0C5E54940}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {84C25B81-07F1-4B81-A2BA-839D4284FAE9}
+	EndGlobalSection
+EndGlobal
