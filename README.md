@@ -1,1 +1,1 @@
-# gestor-planodeacao
+[![Build Status](https://dev.azure.com/ivanborges/SESMTTech/_apis/build/status/sesmt-tecnologico.gestor-planodeacao?branchName=master)](https://dev.azure.com/ivanborges/SESMTTech/_build/latest?definitionId=24&branchName=master)
