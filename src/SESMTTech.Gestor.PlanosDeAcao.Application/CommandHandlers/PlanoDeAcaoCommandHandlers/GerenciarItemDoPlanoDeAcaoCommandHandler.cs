@@ -15,7 +15,8 @@ namespace SESMTTech.Gestor.PlanosDeAcao.Application.CommandHandlers.PlanoDeAcaoC
         IRequestHandler<RemoverResponsavelDoItemDoPlanoDeAcaoCommand>,
         IRequestHandler<ConcluirItensDoPlanoDeAcaoCommand>,
         IRequestHandler<ConcluirItemDoPlanoDeAcaoCommand>,
-        IRequestHandler<CancelarItemDoPlanoDeAcaoCommand>
+        IRequestHandler<CancelarItemDoPlanoDeAcaoCommand>,
+        IRequestHandler<RemoverItemDoPlanoDeAcaoCommand>
     {
         private readonly IUserPrincipalBuilder userPrincipalBuilder;
         private readonly IPlanoDeAcaoWriteOnlyRepository planoDeAcaoWriteOnlyRepository;
@@ -77,6 +78,13 @@ namespace SESMTTech.Gestor.PlanosDeAcao.Application.CommandHandlers.PlanoDeAcaoC
         public async Task<Unit> Handle(CancelarItemDoPlanoDeAcaoCommand request, CancellationToken cancellationToken)
         {
             request.PlanoDeAcao.CancelarItem(request.ItemId);
+
+            return await ProcederComAAtualizacaoDoPlanoDeAcaoAsync(request.PlanoDeAcao);
+        }
+
+        public async Task<Unit> Handle(RemoverItemDoPlanoDeAcaoCommand request, CancellationToken cancellationToken)
+        {
+            request.PlanoDeAcao.RemoverItem(request.ItemId);
 
             return await ProcederComAAtualizacaoDoPlanoDeAcaoAsync(request.PlanoDeAcao);
         }
