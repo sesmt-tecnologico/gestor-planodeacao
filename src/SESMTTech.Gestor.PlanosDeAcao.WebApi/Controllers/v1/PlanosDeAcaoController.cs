@@ -170,6 +170,30 @@ namespace SESMTTech.Gestor.PlanosDeAcao.WebApi.Controllers.v1
         }
 
         [Authorize(Policy = FurizaPolicies.RequireEditorRights)]
+        [HttpDelete("{id}/Itens/{itemId}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(typeof(BadRequestError), 400)]
+        [ProducesResponseType(401)]
+        [ProducesResponseType(403)]
+        [ProducesResponseType(typeof(BadRequestError), 404)]
+        [ProducesResponseType(typeof(InternalServerError), 500)]
+        public async Task<IActionResult> ItensDeleteAsync(Guid id,
+            Guid itemId)
+        {
+            var planoDeAcao = await ObterPlanoDeAcaoAsync(id);
+
+            var command = new RemoverItemDoPlanoDeAcaoCommand()
+            {
+                PlanoDeAcao = planoDeAcao,
+                ItemId = itemId
+            };
+
+            await mediator.Send(command);
+
+            return Ok();
+        }
+
+        [Authorize(Policy = FurizaPolicies.RequireEditorRights)]
         [HttpPut("{id}/Itens/{itemId}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(typeof(BadRequestError), 400)]

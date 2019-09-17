@@ -71,6 +71,14 @@ namespace SESMTTech.Gestor.PlanosDeAcao.Domain.Models.PlanoDeAcaoAggregate
             ObterItem(itemId).Cancelar();
         }
 
+        public void RemoverItem(Guid itemId)
+        {
+            var itemASerRemovido = ObterItem(itemId);
+            itemASerRemovido.ValidarSeStatusPermiteAlteracao();
+
+            _itens.Remove(itemASerRemovido);
+        }
+
         public void AdicionarResponsavelAoItem(Guid itemId, string nomeCompleto, string email)
         {
             ObterItem(itemId).AdicionarResponsavel(nomeCompleto, email);

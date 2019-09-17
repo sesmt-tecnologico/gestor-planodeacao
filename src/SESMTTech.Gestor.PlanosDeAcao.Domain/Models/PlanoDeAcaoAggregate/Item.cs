@@ -32,9 +32,6 @@ namespace SESMTTech.Gestor.PlanosDeAcao.Domain.Models.PlanoDeAcaoAggregate
             if (numero <= 0)
                 throw new NumeroDeIdentificacaoInvalidoException();
 
-            if (prazo < DateTime.Now)
-                throw new DataNaoPodeSerNoPassadoException();
-
             Id = Guid.NewGuid();
             CreationDate = DateTime.UtcNow;
             Numero = numero;
@@ -51,12 +48,9 @@ namespace SESMTTech.Gestor.PlanosDeAcao.Domain.Models.PlanoDeAcaoAggregate
         {
             ValidarSeStatusPermiteAlteracao();
 
-            if (novoPrazo < DateTime.Now)
-                throw new DataNaoPodeSerNoPassadoException();
-
-            if (novoPrazo < Prazo)
+            if (novoPrazo.Date < Prazo.Date)
                 Status = StatusAgendamento.Adiantado;
-            else
+            else if (novoPrazo.Date > Prazo.Date)
                 Status = StatusAgendamento.Adiado;
 
             Prazo = novoPrazo;
@@ -100,7 +94,7 @@ namespace SESMTTech.Gestor.PlanosDeAcao.Domain.Models.PlanoDeAcaoAggregate
         }
 
         #region [+] Privates
-        private void ValidarSeStatusPermiteAlteracao()
+        internal void ValidarSeStatusPermiteAlteracao()
         {
             if (Status == StatusAgendamento.Realizado || Status == StatusAgendamento.Cancelado)
                 throw new StatusAgendamentoNaoPermiteAlteracaoException();
